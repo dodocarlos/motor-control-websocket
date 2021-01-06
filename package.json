@@ -1,0 +1,50 @@
+{
+  "name": "motor-control-service",
+  "version": "1.0.0",
+  "description": "Motor Control Service",
+  "main": "handler.js",
+  "scripts": {
+    "dev": "serverless offline start",
+    "depoy": "serverless deploy --stage prod",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "aws-lambda": "^1.0.6",
+    "aws-xray-sdk": "^3.2.0",
+    "debug": "^4.3.1",
+    "dynamoose": "^2.5.0",
+    "source-map-support": "^0.5.19",
+    "uuid": "^8.3.1"
+  },
+  "devDependencies": {
+    "@serverless/typescript": "^2.16.1",
+    "@types/aws-lambda": "^8.10.64",
+    "@types/debug": "^4.1.5",
+    "@types/node": "^14.14.10",
+    "@types/serverless": "^1.78.12",
+    "@types/uuid": "^8.3.0",
+    "@typescript-eslint/eslint-plugin": "^4.9.0",
+    "@typescript-eslint/parser": "^4.9.0",
+    "eslint": "^7.14.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-import-resolver-typescript": "^2.3.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-import-helpers": "^1.1.0",
+    "eslint-plugin-prettier": "^3.2.0",
+    "fork-ts-checker-webpack-plugin": "^6.0.0",
+    "prettier": "^2.2.1",
+    "serverless-dotenv-plugin": "^3.1.0",
+    "serverless-localstack": "^0.4.28",
+    "serverless-offline": "^6.8.0",
+    "serverless-webpack": "^5.2.0",
+    "serverless-websockets-plugin": "^1.0.0",
+    "ts-loader": "^8.0.10",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.5",
+    "webpack": "^5.4.0",
+    "webpack-node-externals": "^2.5.2"
+  },
+  "author": "@dodocarlos",
+  "license": "MIT"
+}
