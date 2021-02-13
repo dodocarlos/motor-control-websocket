@@ -1,13 +1,11 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.js"></script>
 <script>
-  const socket = io('ws://localhost:3001', {
-        // path: `/prod/`,
-        // forceNew: true,
-        // autoConnect: false,
-        // reconnection: false,
-        upgrade: true,
-        transports: ['websocket',
-        'polling',
-        'flashsocket'
-        ]});
+  const socket = new WebSocket('wss://8iu7a9jyke.execute-api.us-east-1.amazonaws.com/prod?boardId=board01');
+  
+  socket.onmessage = m => console.log;
+
+  socket.on = () => {
+    socket.send(JSON.stringify({action: 'togglePinStatus', data: { board_id: 'board01', pin: 4, status: false }})); 
+    // socket.send(JSON.stringify({action: 'togglePinStatus', data: { board_id: 'board01', pin: 5, status: true }}));
+  };
+
 </script>

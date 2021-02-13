@@ -13,22 +13,11 @@ const serverlessConfiguration: AWS = {
       webpackConfig: './webpack.config.js',
       includeModules: true,
     },
-    localstack: {
-      stages: ['local'],
-      host: 'http://localhost',
-      edgePort: 4566,
-      autostart: true,
-      lambda: {
-        mountCode: true,
-      },
-    },
   },
   plugins: [
     'serverless-webpack',
-    'serverless-localstack',
     'serverless-offline',
     'serverless-dotenv-plugin',
-    'serverless-websockets-plugin',
   ],
   provider: {
     name: 'aws',
@@ -74,12 +63,12 @@ const serverlessConfiguration: AWS = {
       ],
     },
     sendmessageHandler: {
-      handler: 'src/server.sendmessageHandler',
+      handler: 'src/server.togglePinStatus',
       role: 'LambdaRole',
       events: [
         {
           websocket: {
-            route: 'sendmessage',
+            route: 'togglePinStatus',
           },
         },
       ],
